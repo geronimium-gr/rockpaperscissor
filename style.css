@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+:root {
+  --border-color: hsl(217, 16%, 45%);
+  --base-color: hsl(208, 100%, 97%);
+  --font-colorA: hsl(229, 25%, 31%);
+  --font-colorB: hsl(229, 64%, 46%);
+}
+
+/* Overall Apperance */
+* {
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body {
+  background: rgb(31, 55, 86);
+  background: radial-gradient(
+    circle,
+    rgba(31, 55, 86, 1) 50%,
+    rgba(20, 21, 57, 1) 100%
+  );
+}
+
+/* Heading */
+.scoreboard {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 3px var(--border-color) solid;
+  border-radius: 10px;
+}
+
+.scoreboard .scoreboard_gameName .scoreboard_logo {
+  height: 50px;
+  width: 100%;
+}
+
+.scoreboard .scoreboard_yourScore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background-color: var(--base-color);
+  border-radius: 4px;
+}
+
+.scoreboard_yourScore .scoreboard_num {
+  font-size: xx-large;
+  color: var(--font-colorA);
+}
+
+.scoreboard_yourScore .scoreboard_score {
+  color: var(--font-colorB);
+  font-size: small;
+}
+
+.scoreboard_yourScore .scoreboard_score,
+.scoreboard_num {
+  padding: 0;
+  margin: 0;
+}
+
+/* Weapon and Battle Section */
+.weapon,
+.battle {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 1rem;
+  margin: 5rem auto;
+  max-width: 14rem;
+  justify-content: center;
+}
+
+.battle {
+  grid-column-gap: 3rem;
+}
+
+.battle {
+  display: none;
+}
+
+.weapon_paper {
+  grid-area: 1 / 1 / 3 / 3;
+  background: rgb(72, 101, 244);
+  background: radial-gradient(
+    circle,
+    rgba(72, 101, 244, 1) 0%,
+    rgba(86, 113, 245, 1) 35%
+  );
+  cursor: pointer;
+}
+
+.weapon_scissor {
+  grid-area: 1 / 3 / 3 / 5;
+  background: rgb(236, 158, 14);
+  background: radial-gradient(
+    circle,
+    rgba(236, 158, 14, 1) 0%,
+    rgba(236, 169, 34, 1) 35%
+  );
+  cursor: pointer;
+}
+
+.weapon_rock {
+  grid-area: 3 / 2 / 5 / 4;
+  background: rgb(220, 46, 78);
+  background: radial-gradient(
+    circle,
+    rgba(220, 46, 78, 1) 0%,
+    rgba(221, 64, 93, 1) 35%
+  );
+  cursor: pointer;
+}
+
+/* Dynamic Color Changing */
+.bg-1 {
+  background: rgb(72, 101, 244);
+  background: radial-gradient(
+    circle,
+    rgba(72, 101, 244, 1) 0%,
+    rgba(86, 113, 245, 1) 35%
+  );
+}
+
+.bg-2 {
+  background: rgb(236, 158, 14);
+  background: radial-gradient(
+    circle,
+    rgba(236, 158, 14, 1) 0%,
+    rgba(236, 169, 34, 1) 35%
+  );
+}
+
+.bg-3 {
+  background: rgb(220, 46, 78);
+  background: radial-gradient(
+    circle,
+    rgba(220, 46, 78, 1) 0%,
+    rgba(221, 64, 93, 1) 35%
+  );
+}
+
+/* Battle Section */
+.your-choice,
+.ai-choice {
+  margin-top: 2em;
+}
+
+/* Weapons Token */
+.weapon_paper,
+.weapon_rock,
+.weapon_scissor,
+.your-choice,
+.ai-choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+  box-shadow: inset 3px -3px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 3px -3px 4px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: inset 3px -3px 4px rgba(0, 0, 0, 0.4);
+  -o-box-shadow: inset 3px -3px 4px rgba(0, 0, 0, 0.4);
+}
+
+.weapon-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--base-color);
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+  box-shadow: inset -3px 3px 4px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset -3px 3px 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset -3px 3px 4px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: inset -3px 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Text */
+.text-choice {
+  position: absolute;
+  top: 11rem;
+  color: var(--base-color);
+}
+
+.results {
+  display: block;
+  text-align: center;
+  font-size: larger;
+  margin: 2em 0;
+  color: var(--base-color);
+  grid-column: span 2;
+}
+
+.life {
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 30px;
+  background: linear-gradient(
+    90deg,
+    rgba(220, 46, 78, 1) 100%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.life-title {
+  position: absolute;
+  padding: 1rem 0;
+  color: var(--base-color);
+  font-size: small;
+}
+
+/* Button */
+.play-again {
+  outline: none;
+  padding: 1rem;
+  font-size: large;
+  color: var(--font-colorA);
+  letter-spacing: 2px;
+  width: 80%;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.weapon-animation {
+  box-shadow: 0 0 0 16px rgba(165, 164, 164, 0.2),
+    0 0 0 32px rgba(128, 128, 128, 0.2), 0 0 0 48px rgba(94, 94, 94, 0.2);
+  -moz-box-shadow: 0 0 0 16px rgba(165, 164, 164, 0.2),
+    0 0 0 32px rgba(128, 128, 128, 0.2), 0 0 0 48px rgba(94, 94, 94, 0.2);
+  -webkit-box-shadow: 0 0 0 16px rgba(165, 164, 164, 0.2),
+    0 0 0 32px rgba(128, 128, 128, 0.2), 0 0 0 48px rgba(94, 94, 94, 0.2);
+  -o-box-shadow: 0 0 0 16px rgba(165, 164, 164, 0.2),
+    0 0 0 32px rgba(128, 128, 128, 0.2), 0 0 0 48px rgba(94, 94, 94, 0.2);
+}
+
+@keyframes outerCircle {
+  0% {
+    box-shadow: 0 0 0 0 rgba(165, 164, 164, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 32px rgba(128, 128, 128, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 48px rgba(94, 94, 94, 0.2);
+  }
+}
+
+@keyframes choosing {
+  0%,
+  100% {
+    background: rgb(72, 101, 244);
+    background: radial-gradient(
+      circle,
+      rgba(72, 101, 244, 1) 0%,
+      rgba(86, 113, 245, 1) 35%
+    );
+  }
+  25% {
+    background: rgb(236, 158, 14);
+    background: radial-gradient(
+      circle,
+      rgba(236, 158, 14, 1) 0%,
+      rgba(236, 169, 34, 1) 35%
+    );
+  }
+  50% {
+    background: rgb(220, 46, 78);
+    background: radial-gradient(
+      circle,
+      rgba(220, 46, 78, 1) 0%,
+      rgba(221, 64, 93, 1) 35%
+    );
+  }
+  75% {
+    background: rgb(121, 33, 49);
+    background: radial-gradient(
+      circle,
+      rgb(160, 30, 54) 0%,
+      rgba(221, 64, 93, 1) 35%
+    );
+  }
+}
+
+@media (max-width: 2000px) and (min-width: 500px) {
+  .scoreboard {
+    max-width: 50%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .scoreboard .scoreboard_gameName .scoreboard_logo {
+    height: 70px;
+  }
+
+  .life {
+    max-width: 40%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    margin: 1rem auto;
+  }
+
+  .life-title {
+    color: var(--font-colorB);
+  }
+
+  .weapon_paper,
+  .weapon_rock,
+  .weapon_scissor,
+  .your-choice,
+  .ai-choice {
+    height: 8rem;
+    width: 8rem;
+  }
+
+  .weapon-bg {
+    height: 7rem;
+    width: 7rem;
+  }
+
+  .weapon {
+    grid-column-gap: 2rem;
+  }
+}

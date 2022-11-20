@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./index.js"></script>
+
+    <title>Rock Paper Scissor</title>
+</head>
+
+<body>
+    <div class="scoreboard">
+        <div class="scoreboard_gameName">
+            <img class="scoreboard_logo" src="./images/logo.svg" alt="" srcset="">
+        </div>
+        <div class="scoreboard_yourScore">
+            <p class="scoreboard_score">SCORE</p>
+            <h2 class="scoreboard_num">0</h2>
+        </div>
+    </div>
+
+    <div class="life">
+        <p class="life-title">RETRIES</p>
+    </div>
+
+    <div class="weapon">
+        <div class="weapon_paper">
+            <div class="weapon-bg">
+                <img class="weapon-img" src="./images/icon-paper.svg" alt="" srcset="">
+            </div>
+        </div>
+        <div class="weapon_scissor">
+            <div class="weapon-bg">
+                <img class="weapon-img" src="./images/icon-scissors.svg" alt="" srcset="">
+            </div>
+        </div>
+        <div class="weapon_rock">
+            <div class="weapon-bg">
+                <img class="weapon-img" src="./images/icon-rock.svg" alt="" srcset="">
+            </div>
+        </div>
+    </div>
+
+    <div class="battle">
+        <div class="your-choice">
+            <div class="weapon-bg">
+                <img id="img-choice" class="weapon-img" src="" alt="" srcset="">
+            </div>
+            <div class="text-choice">
+                <h3>YOU PICKED</h3>
+            </div>
+        </div>
+
+        <div class="ai-choice">
+            <div class="weapon-bg">
+                <img id="ai-img-choice" class="weapon-img" src="" alt="" srcset="">
+            </div>
+            <div class="text-choice">
+                <h3>THE HOUSE PICKED</h3>
+            </div>
+        </div>
+
+        <div class="results">
+            <h1 class="text-results"></h1>
+            <button class="play-again" onclick="resetGame()">PLAY AGAIN</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

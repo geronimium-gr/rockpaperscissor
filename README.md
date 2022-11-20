@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github Repo](https://github.com/geronimium-gr/rockpaperscissor)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Rock Paper Scissor](https://geronimo-rockpaperscissor.vercel.app/)
 
 ## My process
 
@@ -71,4 +71,4 @@ The use of Session Storage
 - Frontend Mentor - [@geronimium-gr](https://www.frontendmentor.io/profile/geronimium-gr)
 
 ## Acknowledgments
-- John Paul Pineda - for the help in UI.
+- [John Paul Pineda](https://github.com/ijohnpaul2000) - for the help in UI.
